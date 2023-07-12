@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  padding: 15px 15%;
+  background-color: #7ee5ed;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
