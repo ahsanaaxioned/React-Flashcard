@@ -4,7 +4,7 @@ import CardData from "../data/Data";
 const FlashCard = () => {
   const [cardDetails] = useState(CardData);
   const [index, setIndex] = useState(0);
-  console.log(cardDetails);
+  // console.log(cardDetails);
   useEffect(() => {
     if (index < 0) {
       setIndex(CardData.length - 1);
@@ -18,25 +18,31 @@ const FlashCard = () => {
       setIndex(index + 1);
     }, 5000);
     console.log(index);
-    return clearInterval(slideCard);
+    // return clearInterval(slideCard);
   }, [index]);
   return (
-    <>
+    <div className="main-container">
     <h1 className='heading'>React Flashcard</h1>
-    <div>
-     {cardDetails.map((item,index)=>{
-      console.log(item)
+    <div className = 'card-container'>
+     {cardDetails.map((item,cardIndex)=>{
+      // console.log(item)
        const {id,heading} = item;
-       console.log(id,heading);
+       let position = 'next-slide';
+       if(cardIndex === index){
+        console.log('cardIndex:',cardIndex);
+        console.log('index:',index);
+        position = 'activeSlide'
+       }
+      //  console.log(id,heading);
        return(
-        <div key = {id}>
+        <div key = {id} className={`card-detail  ${position}`}>
        <span>{id}</span>
        <h2>{heading}</h2>
        </div>
        )
      })}
     </div>
-    </>
+    </div>
   )
 };
 
