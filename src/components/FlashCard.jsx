@@ -17,23 +17,21 @@ const FlashCard = () => {
   const handleMouseOut = () => setIsHovering(false);
 
   return (
-    <>
+    <div className="card-wrapper">
       <h1 className="heading">React Flashcard</h1>
-      <div>
         <div
           className="card-container"
           key={cardDetails[index].id}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
+          // onMouseOver={handleMouseOver}
+          // onMouseOut={handleMouseOut}
         >
-          {isHovering ? (
+          <div className="front-side">
+            <span className="id">{cardDetails[index].id}</span>
+            <h2 className="title">{cardDetails[index].heading}</h2>
+          </div>
+          <div className='back-side'>
             <p className="description">{cardDetails[index].description}</p>
-          ) : (
-            <>
-              <span className="id">{cardDetails[index].id}</span>
-              <h2 className="title">{cardDetails[index].heading}</h2>
-            </>
-          )}
+          </div>
         </div>
         <div className="cta-control">
           <button className="btn previous" onClick={() => decrement()}>
@@ -43,8 +41,7 @@ const FlashCard = () => {
             Next
           </button>
         </div>
-      </div>
-    </>
+    </div>
   );
 };
 

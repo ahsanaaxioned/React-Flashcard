@@ -22,31 +22,65 @@
   justify-content: center;
   gap: 10px;
   position: relative;
-  background-color: #DFD3C3;
+  background-color: #dfd3c3;
   color: #000;
   cursor: pointer;
-  transition:   1s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: 0.6s ease-in-out;
 }
 
-  .card-container:hover  {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-  }
-
-.card-container:hover p {
+.card-container:hover {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
-.id, .title , .description {
+.front-side,
+.back-side {
+  align-items: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 30vh;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.front-side {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+  z-index: 2;
+}
+
+.back-side {
+  padding: 16px 48px;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.id,
+.title {
   font-size: 25px;
   font-weight: 700;
 }
 
-.cta-control{
+.description {
+  font-size: 18px;
+}
+
+.cta-control {
   display: flex;
   justify-content: center;
-} 
+}
 
 .btn {
   width: 50px;
@@ -64,18 +98,21 @@
 }
 
 .btn:hover {
-  background-color: #7ee5ed ;
+  background-color: #7ee5ed;
   color: #fff;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.btn.previous::before,.btn.next::before {
-  content: '\f061';
+.btn.previous::before,
+.btn.next::before {
+  content: "\f061";
   float: left;
-  font-family: 'FontAwesome';
+  font-family: "FontAwesome";
   text-indent: 0;
   font-size: 25px;
   font-weight: 600;
 }
 
-.btn.previous::before{ rotate: 180deg; }
+.btn.previous::before {
+  rotate: 180deg;
+}
