@@ -26,6 +26,7 @@ const FlashCard = () => {
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
         >
+          <div>
           {isHovering ? (
             <p className="description">{cardDetails[index].description}</p>
           ) : (
@@ -34,6 +35,7 @@ const FlashCard = () => {
               <h2 className="title">{cardDetails[index].heading}</h2>
             </>
           )}
+          </div>
         </div>
         <div className="cta-control">
           <button className="btn previous" onClick={() => decrement()}>

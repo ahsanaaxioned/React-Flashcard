@@ -13,7 +13,7 @@
 
 .card-container {
   width: 30%;
-  padding: 70px 2%;
+  padding: 80px 2%;
   margin: 100px auto;
   border-radius: 20px;
   display: flex;
@@ -28,6 +28,14 @@
   transition:   1s ease-in-out;
 }
 
+.card-container div {
+  padding: 10px 15px;
+  position: absolute;
+  line-height: 28px;
+}
+
+
+
   .card-container:hover  {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
@@ -38,7 +46,7 @@
   transform: rotateY(180deg);
 }
 
-.id, .title , .description {
+.id, .title {
   font-size: 25px;
   font-weight: 700;
 }
