@@ -22,39 +22,41 @@
   justify-content: center;
   gap: 10px;
   position: relative;
-  background-color: #DFD3C3;
+  background-color: #dfd3c3;
   color: #000;
   cursor: pointer;
-  transition:   1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .card-container div {
   padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   line-height: 28px;
 }
 
-
-
-  .card-container:hover  {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-  }
+.card-container:hover {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
 
 .card-container:hover p {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
-.id, .title {
+.id,
+.title {
   font-size: 25px;
   font-weight: 700;
 }
 
-.cta-control{
+.cta-control {
   display: flex;
   justify-content: center;
-} 
+}
 
 .btn {
   width: 50px;
@@ -72,18 +74,21 @@
 }
 
 .btn:hover {
-  background-color: #7ee5ed ;
+  background-color: #7ee5ed;
   color: #fff;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.btn.previous::before,.btn.next::before {
-  content: '\f061';
+.btn.previous::before,
+.btn.next::before {
+  content: "\f061";
   float: left;
-  font-family: 'FontAwesome';
+  font-family: "FontAwesome";
   text-indent: 0;
   font-size: 25px;
   font-weight: 600;
 }
 
-.btn.previous::before{ rotate: 180deg; }
+.btn.previous::before {
+  rotate: 180deg;
+}
