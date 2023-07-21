@@ -35,6 +35,7 @@
   align-items: center;
   position: absolute;
   line-height: 28px;
+  transition: inherit;
 }
 
 .card-container:hover {
@@ -42,9 +43,9 @@
   transform: rotateY(180deg);
 }
 
-.card-container:hover p {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
+.card-container:hover div {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 
 .id,
